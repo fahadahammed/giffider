@@ -2,12 +2,13 @@
 echo "------------------------"
 echo "Created By: Fahad Ahammed"
 echo "https://obakfahad.com"
+echo "Github Repository: https://github.com/obakfahad/giffider"
 echo "------------------------"
 me=$(whoami)
 loc=/home/$me/Pictures/
 cd $loc
-echo "1. Griffider in Full Screen?"
-echo "2. Groffoder in specific Windows?"
+echo "1. Giffider in Full Screen?"
+echo "2. Giffider in specific Windows?"
 read fw
 if [ $fw = "1" ]
 then	
