@@ -11,7 +11,9 @@
 
 ## Usasge
 
-Once it ends you can continue using it by the command : *giffider*
+Once it ends you can continue using it by the command : 
+
+`giffider`
 
 ### Support
 
