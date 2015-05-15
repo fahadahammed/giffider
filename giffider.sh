@@ -8,6 +8,7 @@ sudo apt-get install byzanz
 me=$(whoami)
 loc=/home/$me/Pictures/
 cd $loc
+echo ""
 echo "1. Giffider in Full Screen?"
 echo "2. Giffider in specific Window?"
 read fw
@@ -16,33 +17,61 @@ then
 
 	hor=$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3}')
 	ver=$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $4}')
-	echo "1. Dual monitor ?"
-	echo "2. Single Monitor ?"
+	echo "a. Dual monitor ?"
+	echo "b. Single Monitor ?"
 	read ifdual
-	if [ $ifdual = "1" ]
+	if [ $ifdual = "a" ]
 		then
-			echo "1. Dual Monitor."
-			echo "Horizontal = "$hor	
+			echo "a. Dual Monitor."
+			echo ""
+			echo "1. Left Monitor ?"
+			echo "2. Right Monitor ?"
+			echo ""
+			read iflr
+			if [ $iflr = '1' ]
+			then
+				echo "1. Left Monitor."
+				echo ""
+				horizontal=$[hor/2]
+				echo "Horizontal = "$horizontal
+				echo "Vertical="$ver
+				echo "Your gif Duration ?"
+				read duration
+				echo "Your gif's name ?"
+				read giffidername
+				byzanz-record --duration=$duration --width=$horizontal --height=$ver giffider-$giffidername.gif
+			fi
+			if [ $iflr = '2' ]
+			then
+				echo "2. Right Monitor."
+				echo ""
+				echo "Yet to be processed."
+				#rhor=$[hor/2]
+				#echo "Horizontal = "$rhor	
+				#echo "Vertical="$ver
+				#echo "Your gif Duration ?"
+				#read duration
+				#echo "Your gif's name ?"
+				#read giffidername
+				#byzanz-record --duration=$duration --width=$hor --height=$ver giffider-$giffidername.gif
+				#convert giffider-$giffidername.gif -crop $rhorx768+$rhor+0 giffider-$giffidername.gif
+			fi
+	fi
+			
+			
+			
+			
+	if [ $ifdual = "b" ]
+	then
+			echo "b. Single Monitor"
+			echo ""
+			echo "Horizontal = "$hor
 			echo "Vertical="$ver
 			echo "Your gif Duration ?"
 			read duration
 			echo "Your gif's name ?"
 			read giffidername
 			byzanz-record --duration=$duration --width=$hor --height=$ver giffider-$giffidername.gif
-			
-			
-			
-			
-	if [ $ifdual = "2" ]
-			echo "2. Single Monitor"
-			echo "Horizontal = "$[hor/2]
-			horizontal=$[hor/2]
-			echo "Vertical="$ver
-			echo "Your gif Duration ?"
-			read duration
-			echo "Your gif's name ?"
-			read giffidername
-			byzanz-record --duration=$duration --width=$horizontal --height=$ver giffider-$giffidername.gif
 	fi
 
 fi
