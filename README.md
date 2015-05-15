@@ -19,3 +19,5 @@ Once it ends you can continue using it by the command :
 If you need specific help you can mail me from: [Contact Me](http://obakfahad.github.io/contact/)
 
 Thanks to *byzanz*.
+
+BTW, it is tested in Ubuntu only.
