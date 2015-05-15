@@ -4,6 +4,7 @@ echo "Created By: Fahad Ahammed"
 echo "https://obakfahad.com"
 echo "Github Repository: https://github.com/obakfahad/giffider"
 echo "------------------------"
+sudo apt-get install byzanz
 me=$(whoami)
 loc=/home/$me/Pictures/
 cd $loc
