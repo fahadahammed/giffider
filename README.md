@@ -4,7 +4,7 @@
 
 `sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/giffider.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
 
-## Usasge
+## Usage
 
 Once it ends you can continue using it by the command : 
 
