@@ -4,17 +4,25 @@ echo "Created By: Fahad Ahammed"
 echo "https://obakfahad.com"
 echo "Github Repository: https://github.com/obakfahad/giffider"
 echo "------------------------"
-sudo apt-get install byzanz
+ifex=$(which byzanz-record)
+if [[ $ifex == "/usr/bin/byzanz-record" ]]
+ then
+ echo "Starting.........."
+ else
+ echo "Need to install Dependency."
+ sudo apt-get install byzanz
+fi
 me=$(whoami)
 loc=/home/$me/Pictures/
 cd $loc
-echo ""
+echo "-----------------------------"
 echo "1. Giffider in Full Screen?"
 echo "2. Giffider in specific Window?"
+echo "-----------------------------"
 read fw
 if [ $fw = "1" ]
 then	
-
+	echo "-----------------------------"
 	hor=$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3}')
 	ver=$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $4}')
 	echo "a. Dual monitor ?"
@@ -22,16 +30,18 @@ then
 	read ifdual
 	if [ $ifdual = "a" ]
 		then
+			echo "-----------------------------"
 			echo "a. Dual Monitor."
-			echo ""
+			echo "-----------------------------"
 			echo "1. Left Monitor ?"
 			echo "2. Right Monitor ?"
-			echo ""
+			echo "-----------------------------"
 			read iflr
 			if [ $iflr = '1' ]
 			then
+				echo "-----------------------------"
 				echo "1. Left Monitor."
-				echo ""
+				echo "-----------------------------"
 				horizontal=$[hor/2]
 				echo "Horizontal = "$horizontal
 				echo "Vertical="$ver
@@ -40,11 +50,16 @@ then
 				echo "Your gif's name ?"
 				read giffidername
 				byzanz-record --duration=$duration --width=$horizontal --height=$ver giffider-$giffidername.gif
+				eog giffider-$giffidername.gif &
+				echo ""
+				nautilus -n $loc
+				echo "File Location: "$loc
 			fi
 			if [ $iflr = '2' ]
 			then
+				echo "-----------------------------"
 				echo "2. Right Monitor."
-				echo ""
+				echo "-----------------------------"
 				echo "Yet to be processed."
 				#rhor=$[hor/2]
 				#echo "Horizontal = "$rhor	
@@ -63,8 +78,9 @@ then
 			
 	if [ $ifdual = "b" ]
 	then
+			echo "-----------------------------"
 			echo "b. Single Monitor"
-			echo ""
+			echo "-----------------------------"
 			echo "Horizontal = "$hor
 			echo "Vertical="$ver
 			echo "Your gif Duration ?"
@@ -72,6 +88,10 @@ then
 			echo "Your gif's name ?"
 			read giffidername
 			byzanz-record --duration=$duration --width=$hor --height=$ver giffider-$giffidername.gif
+			eog giffider-$giffidername.gif &
+			echo ""
+			nautilus -n $loc
+			echo "File Location: "$loc
 	fi
 
 fi
@@ -81,7 +101,7 @@ fi
 
 if [ $fw = "2" ]
 then
-	
+	echo "-----------------------------"
 	rm .file.txt
 	rm .1.txt
 	xwininfo >> .file.txt
@@ -95,5 +115,8 @@ then
 	echo "Your gif's name ?"
 	read giffidername
 	byzanz-record --duration=$duration --x=$X --y=$Y --width=$width --height=$height giffider-$giffidername.gif
-	
+	eog giffider-$giffidername.gif &
+	echo ""
+	nautilus -n $loc
+	echo "File Location: "$loc
 fi
