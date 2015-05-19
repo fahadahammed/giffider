@@ -45,7 +45,7 @@ then
 				horizontal=$[hor/2]
 				echo "Horizontal = "$horizontal
 				echo "Vertical="$ver
-				echo "Your gif Duration ?"
+				echo "Your gif Duration in Seconds?"
 				read duration
 				echo "Your gif's name ?"
 				read giffidername
@@ -64,7 +64,7 @@ then
 				#rhor=$[hor/2]
 				#echo "Horizontal = "$rhor	
 				#echo "Vertical="$ver
-				#echo "Your gif Duration ?"
+				#echo "Your gif Duration in Seconds?"
 				#read duration
 				#echo "Your gif's name ?"
 				#read giffidername
@@ -83,7 +83,7 @@ then
 			echo "-----------------------------"
 			echo "Horizontal = "$hor
 			echo "Vertical="$ver
-			echo "Your gif Duration ?"
+			echo "Your gif Duration in Seconds?"
 			read duration
 			echo "Your gif's name ?"
 			read giffidername
@@ -93,7 +93,6 @@ then
 			nautilus -n $loc
 			echo "File Location: "$loc
 	fi
-
 fi
 
 
@@ -110,7 +109,7 @@ then
 	Y=$(sed -n '2p' .1.txt)
 	width=$(sed -n '5p' .1.txt)
 	height=$(sed -n '6p' .1.txt)
-	echo "Your gif Duration ?"
+	echo "Your gif Duration in Seconds?"
 	read duration
 	echo "Your gif's name ?"
 	read giffidername
