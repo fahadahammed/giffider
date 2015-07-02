@@ -2,11 +2,11 @@
 
 ## Giffider Install for UBUNTU (UNITY)
 
-`sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/giffider.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
+`sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/script/giffider-ubuntu.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
 
 ## Giffider Install for KUBUNTU (KDE)
 
-`sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/giffider.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
+`sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/script/giffider-kubuntu.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
 
 ## Usage
 
