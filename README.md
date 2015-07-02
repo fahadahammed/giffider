@@ -1,6 +1,10 @@
 #Giffider
 
-## Giffider Install
+## Giffider Install for UBUNTU (UNITY)
+
+`sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/giffider.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
+
+## Giffider Install for KUBUNTU (KDE)
 
 `sudo wget https://raw.githubusercontent.com/obakfahad/giffider/master/giffider.sh -O /usr/local/sbin/giffider;sudo chmod a+x /usr/local/sbin/giffider`
 
@@ -20,4 +24,4 @@ If you need specific help you can mail me from: [Contact Me](http://obakfahad.gi
 
 Thanks to *byzanz*.
 
-BTW, it is tested in Ubuntu only.
+BTW, it is tested in Ubuntu and kubuntu only.

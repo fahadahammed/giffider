@@ -4,6 +4,8 @@ echo "Created By: Fahad Ahammed"
 echo "https://obakfahad.com"
 echo "Github Repository: https://github.com/obakfahad/giffider"
 echo "------------------------"
+echo "OS: KUBUNTU"
+echo "------------------------"
 ifex=$(which byzanz-record)
 if [[ $ifex == "/usr/bin/byzanz-record" ]]
  then
@@ -50,9 +52,9 @@ then
 				echo "Your gif's name ?"
 				read giffidername
 				byzanz-record --duration=$duration --width=$horizontal --height=$ver giffider-$giffidername.gif
-				eog giffider-$giffidername.gif &
+				gwenview giffider-$giffidername.gif &
 				echo ""
-				nautilus -n $loc
+				dolphin $loc
 				echo "File Location: "$loc
 			fi
 			if [ $iflr = '2' ]
@@ -88,9 +90,9 @@ then
 			echo "Your gif's name ?"
 			read giffidername
 			byzanz-record --duration=$duration --width=$hor --height=$ver giffider-$giffidername.gif
-			eog giffider-$giffidername.gif &
+			gwenview giffider-$giffidername.gif &
 			echo ""
-			nautilus -n $loc
+			dolphin $loc
 			echo "File Location: "$loc
 	fi
 fi
@@ -114,8 +116,8 @@ then
 	echo "Your gif's name ?"
 	read giffidername
 	byzanz-record --duration=$duration --x=$X --y=$Y --width=$width --height=$height giffider-$giffidername.gif
-	eog giffider-$giffidername.gif &
+	gwenview giffider-$giffidername.gif &
 	echo ""
-	nautilus -n $loc
+	dolphin $loc
 	echo "File Location: "$loc
 fi
