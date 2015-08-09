@@ -12,7 +12,7 @@ if [[ $ifex == "/usr/bin/byzanz-record" ]]
  echo "Starting.........."
  else
  echo "Need to install Dependency."
- sudo apt-get install byzanz
+ sudo apt-get install byzanz -y
 fi
 me=$(whoami)
 loc=/home/$me/Pictures/
